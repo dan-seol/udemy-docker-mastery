@@ -1,0 +1,75 @@
+docker run -p 80:4000 -v ${pwd}:/site bretfisher/jekyll-serve
+##############################################################33
+PS C:\Users\yunhe\udemy-docker-mastery\bindmount-sample-1> docker run -p 80:4000 -v ${pwd}:/site bretfisher/jekyll-serve
+Unable to find image 'bretfisher/jekyll-serve:latest' locally
+latest: Pulling from bretfisher/jekyll-serve
+5843afab3874: Already exists
+7a470944fd7c: Pull complete
+6b41d833dfb2: Pull complete
+0a5fae886cd1: Pull complete
+cb519c7515e2: Pull complete
+165f13682879: Pull complete
+982edfa37881: Pull complete
+40ba02cacb47: Pull complete
+da896746ff81: Pull complete
+Digest: sha256:04a042c7ca4e14b2e68213655343191a98f5725f70d1c09d3e4e53211c88421f
+Status: Downloaded newer image for bretfisher/jekyll-serve:latest
+Fetching gem metadata from https://rubygems.org/..........
+Resolving dependencies...
+Using public_suffix 4.0.6
+Using bundler 2.2.23
+Using colorator 1.1.0
+Using concurrent-ruby 1.1.9
+Using eventmachine 1.2.7
+Using http_parser.rb 0.6.0
+Using ffi 1.15.3
+Using forwardable-extended 2.6.0
+Using rb-fsevent 0.11.0
+Using liquid 4.0.3
+Using mercenary 0.4.0
+Using rouge 3.26.0
+Using safe_yaml 1.0.5
+Using unicode-display_width 1.7.0
+Fetching webrick 1.7.0
+Using pathutil 0.16.2
+Fetching rexml 3.2.5
+Using i18n 1.8.10
+Using addressable 2.8.0
+Using em-websocket 0.5.2
+Using sassc 2.4.0
+Using rb-inotify 0.10.1
+Using terminal-table 2.0.0
+Using jekyll-sass-converter 2.1.0
+Fetching listen 3.6.0
+Installing listen 3.6.0
+Using jekyll-watch 2.2.1
+Installing webrick 1.7.0
+Installing rexml 3.2.5
+Using kramdown 2.3.1
+Using kramdown-parser-gfm 1.1.0
+Using jekyll 4.2.0
+Fetching jekyll-feed 0.15.1
+Fetching jekyll-seo-tag 2.7.1
+Installing jekyll-feed 0.15.1
+Installing jekyll-seo-tag 2.7.1
+Fetching minima 2.5.1
+Installing minima 2.5.1
+Bundle complete! 7 Gemfile dependencies, 32 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Configuration file: /site/_config.yml
+            Source: /site
+       Destination: /site/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+       Jekyll Feed: Generating feed for posts
+                    done in 0.548 seconds.
+                    Auto-regeneration may not work on some Windows versions.
+                    Please see: https://github.com/Microsoft/BashOnWindows/issues/216
+                    If it does not work, please upgrade Bash on Windows or run Jekyll with --no-watch.
+ Auto-regeneration: enabled for '/site'
+    Server address: http://0.0.0.0:4000/
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2021-07-26 02:56:28
+                    _posts/2020-07-21-welcome-to-jekyll.markdown
+       Jekyll Feed: Generating feed for posts
+                    ...done in 0.5719949 seconds.

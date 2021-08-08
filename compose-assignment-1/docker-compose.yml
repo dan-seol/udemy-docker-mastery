@@ -1,9 +1,8 @@
 version: '2'
 
 services:
-  custom-drupal:
-    build:
-      context: .
+  drupal:
+    image: drupal:8.8.2
     ports: 
       - '8080:80'
     volumes:
@@ -17,13 +16,10 @@ services:
       POSTGRES_DB: db
       POSTGRES_USER: user
       POSTGRES_PASSWORD: 1234
-    volumes:
-      - drupal-data:/var/lib/postgresql/data
 
 volumes:
     drupal-modules:
     drupal-profiles:
     drupal-sites:
     drupal-themes:
-    drupal-data:
 # set up the website as configured here, but go to advanced options > service name from localhost to postgres
