@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  custom-drupal:
+    image: drupal:8.8.2
+    ports: 
+      - '8081:80'
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
+  postgres:
+    image: postgres:12.1
+    secrets: 
+      - psql_pw
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/psql_pw
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
+
+volumes:
+    drupal-modules:
+    drupal-profiles:
+    drupal-sites:
+    drupal-themes:
+    drupal-data:
+# set up the website as configured here, but go to advanced options > service name from localhost to postgres
+secrets:
+  psql_pw:
+    external: true
