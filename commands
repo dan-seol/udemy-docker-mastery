@@ -1,0 +1,72 @@
+#multiple containers
+#1. we want to run 3 containers
+# mysql on 3306:3306
+# httpd on 8080:80
+# nginx on 80:80
+docker container run -d -p 3306:3306 --name mydb -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+docker container log mydb
+oowee2shaquoh4Peir8ui4IWoowahDoi
+docker container ls
+
+docker container run -d -p 8080:80 --name myweb httpd
+
+docker container run -d -p 80:80 --name myproxy nginx
+
+##testing
+curl localhost
+curl localhost:8080
+
+##deleting
+docker container stop mydb myweb myproxy
+docker container ls -a
+docker container rm 
+##checking for images
+docker image ls
+
+#docker image
+
+docker build -t testnode .
+docker container run --rm testnode -p 8081:3000 testnode
+docker image ls
+
+#pushing
+docker tag testnode danseol329/testing-node
+docker push --help 
+docker push danseol329/testing-node
+
+#prune
+
+docker image prune
+docker system prune
+
+#docker compose
+docker-compose up
+docker-compose down
+
+##docker swarm
+docker swarm init --advertise-addr <>
+
+docker swarm join --token SWMTKN-1-64fib3ymavi2icoqqmxn6mllb3y12hmm6savgvffdkc3790ciu-9stylfois11fecco3uttyqy7w 143.198.47.125:2377
+
+docker node update --role manager node2
+dpclker swarm join-token manager
+
+#K8
+microk8s kubectl version
+microk8s kubectl get pods
+microk8s kubectl get all
+
+microk8s kubectl create deployment my-nginx --image nginx
+microk8s kubectl delete deployment my-nginx
+microk8s kubectl create
+
+microk8s kubectl create deployment my-apache --image httpd
+microk8s kubectl scale deploy/my-apache --replicas 2
+
+microk8s kubectl logs deployment/my-apache
+microk8s kubectl logs deployment/my-apache --follow --tail 1 #waits until something new shows up, and just use the last line
+
+microk8s kubectl logs -l run=deployment/my-apache
+microk8s kubectl describe my-apache-7b68fdd849-hv6xh #description like events
+microk8s kubectl get pods -w #watch
+microk8s kubectl delete pod/my-apache-7b68fdd849-dvwfg

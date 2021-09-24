@@ -1,0 +1,12 @@
+#Manage multiple containers
+#run an nginx on 80:80, a httpd, and a mysql server
+
+nginx, httpd, mysql respectively to 80:80, 8080:80 3306:3306
+
+mysql : --env MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+docker container logs
+
+docker container stop
+
+docker container rm
